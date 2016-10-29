@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  start_date: 2016-10-29 17:48:02
+  end_date: 2016-10-29 17:48:02
+  latitude: 1.5
+  longitude: 1.5
+  cancelled: false
+  user_id: 
+
+two:
+  name: MyString
+  description: MyString
+  start_date: 2016-10-29 17:48:02
+  end_date: 2016-10-29 17:48:02
+  latitude: 1.5
+  longitude: 1.5
+  cancelled: false
+  user_id: 
