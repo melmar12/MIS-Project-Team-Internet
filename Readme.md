@@ -1,1 +1,0 @@
-Design Template in bootstrap-template branch
