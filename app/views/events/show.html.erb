@@ -68,5 +68,7 @@
 
 <%= image_tag 'https://maps.googleapis.com/maps/api/staticmap?center=' + @event.latitude.to_s + ',' + @event.longitude.to_s + '&zoom=12&size=400x400' %>
 
+</br>
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', events_path %> |
+<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
