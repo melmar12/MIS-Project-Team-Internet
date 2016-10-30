@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :events
   resources :users
   resources :taggings
-  resources :events
   resources :taggings
   resources :tags
 

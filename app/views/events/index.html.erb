@@ -9,6 +9,11 @@
       <th>Description</th>
       <th>Start date</th>
       <th>End date</th>
+      <th>Street line1</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Country</th>
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Cancelled</th>
@@ -24,10 +29,15 @@
         <td><%= event.description %></td>
         <td><%= event.start_date %></td>
         <td><%= event.end_date %></td>
+        <td><%= event.street_line1 %></td>
+        <td><%= event.city %></td>
+        <td><%= event.state %></td>
+        <td><%= event.zip %></td>
+        <td><%= event.country %></td>
         <td><%= event.latitude %></td>
         <td><%= event.longitude %></td>
         <td><%= event.cancelled %></td>
-        <td><%= event.user.first_name %></td>
+        <td><%= event.user %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

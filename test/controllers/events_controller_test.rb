@@ -18,7 +18,7 @@ class EventsControllerTest < ActionController::TestCase
 
   test "should create event" do
     assert_difference('Event.count') do
-      post :create, event: { cancelled: @event.cancelled, description: @event.description, end_date: @event.end_date, latitude: @event.latitude, longitude: @event.longitude, name: @event.name, start_date: @event.start_date, user_id: @event.user_id }
+      post :create, event: { cancelled: @event.cancelled, city: @event.city, country: @event.country, description: @event.description, end_date: @event.end_date, latitude: @event.latitude, longitude: @event.longitude, name: @event.name, start_date: @event.start_date, state: @event.state, street_line1: @event.street_line1, user_id: @event.user_id, zip: @event.zip }
     end
 
     assert_redirected_to event_path(assigns(:event))
@@ -35,7 +35,7 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should update event" do
-    patch :update, id: @event, event: { cancelled: @event.cancelled, description: @event.description, end_date: @event.end_date, latitude: @event.latitude, longitude: @event.longitude, name: @event.name, start_date: @event.start_date, user_id: @event.user_id }
+    patch :update, id: @event, event: { cancelled: @event.cancelled, city: @event.city, country: @event.country, description: @event.description, end_date: @event.end_date, latitude: @event.latitude, longitude: @event.longitude, name: @event.name, start_date: @event.start_date, state: @event.state, street_line1: @event.street_line1, user_id: @event.user_id, zip: @event.zip }
     assert_redirected_to event_path(assigns(:event))
   end
 

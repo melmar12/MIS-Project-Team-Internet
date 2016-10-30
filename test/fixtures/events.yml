@@ -3,8 +3,13 @@
 one:
   name: MyString
   description: MyString
-  start_date: 2016-10-29 17:48:02
-  end_date: 2016-10-29 17:48:02
+  start_date: 2016-10-29 20:28:49
+  end_date: 2016-10-29 20:28:49
+  street_line1: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  country: MyString
   latitude: 1.5
   longitude: 1.5
   cancelled: false
@@ -13,8 +18,13 @@ one:
 two:
   name: MyString
   description: MyString
-  start_date: 2016-10-29 17:48:02
-  end_date: 2016-10-29 17:48:02
+  start_date: 2016-10-29 20:28:49
+  end_date: 2016-10-29 20:28:49
+  street_line1: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  country: MyString
   latitude: 1.5
   longitude: 1.5
   cancelled: false

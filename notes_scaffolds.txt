@@ -1,4 +1,4 @@
-rails g scaffold Event name:string description:string start_date:datetime end_date:datetime latitude:float longitude:float cancelled:boolean user:belongs_to
+rails g scaffold Event name:string description:string start_date:datetime end_date:datetime street_line1:string city:string state:string zip:string country:string latitude:float longitude:float cancelled:boolean user:belongs_to
 
 rails g scaffold User first_name:string last_name:string classification:string email:string organization:string password_digest:string admin:boolean
 
