@@ -60,11 +60,12 @@
   <%= @event.cancelled %>
 </p>
 
+<% if @event.user %>
 <p>
   <strong>Created by:</strong>
   <%= @event.user.first_name %>
 </p>
-
+<% end %>
 
 <%= image_tag 'https://maps.googleapis.com/maps/api/staticmap?center=' + @event.latitude.to_s + ',' + @event.longitude.to_s + '&zoom=12&size=400x400' %>
 

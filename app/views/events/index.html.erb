@@ -37,7 +37,11 @@
         <td><%= event.latitude %></td>
         <td><%= event.longitude %></td>
         <td><%= event.cancelled %></td>
+        <% if event.user %>
         <td><%= event.user.first_name %></td>
+        <% else %>
+        <td></td>
+        <% end %>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_admin, only: [:destroy, :index]
   before_action :require_user, only: [:index]
@@ -40,8 +40,8 @@ class UsersController < ApplicationController
         flash[:success] = "Signup successfully. Welcome #{@user.first_name}!"
         redirect_to root_path
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render :new
+        #format.json { render json: @user.errors, status: :unprocessable_entity }
         # render new
       end
     #end
