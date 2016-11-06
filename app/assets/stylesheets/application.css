@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import "custom/theme.css.scss";
+@import "custom/nav-bar.css.scss";
+
+@import "custom/events-index.css.scss";

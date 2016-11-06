@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
     length: {minimum: 3, maximum: 50}
   validates :description, 
     presence: true,
-    length: {minimum: 3, maximum: 300}
+    length: {minimum: 3, maximum: 5000}
   validates :start_date, 
     presence: true
   validates :end_date, 
@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
     length: {minimum: 3, maximum: 50}
   validates :state, 
     presence: true,
-    length: {minimum: 3, maximum: 30}
+    length: {minimum: 2, maximum: 30}
     # add set options??
   validates :user_id, 
     presence: true
