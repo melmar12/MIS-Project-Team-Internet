@@ -1,75 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<div id="event-show">
+  <div id="event-show-container">
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+    <div class="header">
+      <h1><%= @event.name %></h1>
+      <% if @event.cancelled? %>
+        <p>Event Cancelled!!!!!!!!!</p>
+      <% end %>
+      </br>
+      <%= link_to 'Edit', edit_event_path(@event) %> |
+      <%= link_to 'Back', events_path %> |
+      <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="header-image">
+        event image
+      </div>
+    </div>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
+    <div class="event-info">
 
-<p>
-  <strong>End date:</strong>
-  <%= @event.end_date %>
-</p>
+      <div class="right-col">
+        <h3>Description</h3>
+        <p> <%= @event.description %></p>
 
-<p>
-  <strong>Street line1:</strong>
-  <%= @event.street_line1 %>
-</p>
+        <% if @event.user %>
+        <h3>Created By: <%= @event.user.first_name %></h3>
+       <% end %>
+      </div>
 
-<p>
-  <strong>City:</strong>
-  <%= @event.city %>
-</p>
+      <div class="left-col">
+        <h3>Time/Date</h3>
+        <%= @event.start_date %>
+        <%= @event.end_date %>
 
-<p>
-  <strong>State:</strong>
-  <%= @event.state %>
-</p>
+        <h3>Address</h3>
+        <%= @event.street_line1 %>
+        <%= @event.city %>
+        <%= @event.state %>
+        <%= @event.zip %>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @event.zip %>
-</p>
+        <%= image_tag 'https://maps.googleapis.com/maps/api/staticmap?center=' + @event.latitude.to_s + ',' + @event.longitude.to_s + '&zoom=12&size=400x400' %>
+      </div>
 
-<p>
-  <strong>Country:</strong>
-  <%= @event.country %>
-</p>
+    </div>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @event.latitude %>
-</p>
+  </div>
+</div>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @event.longitude %>
-</p>
 
-<p>
-  <strong>Cancelled:</strong>
-  <%= @event.cancelled %>
-</p>
 
-<% if @event.user %>
-<p>
-  <strong>Created by:</strong>
-  <%= @event.user.first_name %>
-</p>
-<% end %>
 
-<%= image_tag 'https://maps.googleapis.com/maps/api/staticmap?center=' + @event.latitude.to_s + ',' + @event.longitude.to_s + '&zoom=12&size=400x400' %>
-
-</br>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %> |
-<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -1,0 +1,37 @@
+#event-show {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: -10px;
+
+	#event-show-container {
+		width: 80%;
+		.header {
+			height: 200px;
+			width: 100%;
+
+			.header-image {
+				height: 200px;
+				width: 100%;
+				background-color: #eee;
+			}
+		}
+
+		.event-info {
+			display: flex;
+			flex-direction: row;
+
+			background-color: green;
+			.right-col {
+				width: 50%;
+				background-color: red;
+			}
+			.left-col {
+				width: 50%;
+				background-color: yellow;
+			}
+		}
+	}
+
+}

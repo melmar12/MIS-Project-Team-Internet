@@ -16,17 +16,17 @@
 # User.create(first_name: 'matt', email: 'matt@example.com', password: '123', admin: false);
 # User.create(first_name: 'will', email: 'will@example.com', password: '123', admin: false);
 
-# Event.create(
-# 	name: "Day for night",
-# 	description: "DAY FOR NIGHT is an experiential arts festival featuring digital installations and world-renowned performers, taking place on December 17 and 18 in Houston, Texas. “Day for Night piqued our interest and delivered in spades,” hailed Consequence of Sound, and Department of Dance deemed the inaugural event “the festival of the future.”",
-#     street_line1: "401 Franklin St",
-#     city: "Houston",
-#     state: "TX",
-#     zip: "77201",
-#     country: "US",
-#     cancelled: false,
-#     user_id: 2
-# );
+Event.create(
+	name: "Day for night",
+	description: "DAY FOR NIGHT is an experiential arts festival featuring digital installations and world-renowned performers, taking place on December 17 and 18 in Houston, Texas. “Day for Night piqued our interest and delivered in spades,” hailed Consequence of Sound, and Department of Dance deemed the inaugural event “the festival of the future.”",
+    street_line1: "401 Franklin St",
+    city: "Houston",
+    state: "TX",
+    zip: "77201",
+    country: "US",
+    cancelled: false,
+    user_id: 2
+);
 
 
 
