@@ -1,3 +1,5 @@
+$coog-red: rgba(200,16,46,1.00);
+
 h1 {
 
 }
@@ -8,4 +10,11 @@ h2 {
 
 a:hover {
 	text-decoration: none;
+}
+
+
+@mixin general-width {
+	min-width: 400px;
+	width: 80%;
+	max-width: 800px;
 }

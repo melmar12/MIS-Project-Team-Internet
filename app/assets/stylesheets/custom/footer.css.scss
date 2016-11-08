@@ -1,0 +1,15 @@
+#custom-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100%;
+	color: rgba(black, .5);
+
+	background-color: $coog-red;
+
+	div {
+		min-width: 400px;
+		width: 90%;
+	}
+}

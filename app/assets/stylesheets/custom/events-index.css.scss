@@ -1,11 +1,70 @@
 #events-index {
 	.header {
-		height: 150px;
-		background-color: #bbb;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		//background-color: $coog-red;
+		color: white;
+		h1 {
+			color: white;
+		}
+		.header-image, .header-image div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.header-image {
+			margin-top: -10px;
+			height: 300px;
+			background-image: url('http://www.uh.edu/news-events/stories/2016/August/Cullen.jpg');
+			background-size: cover;
+			background-position: center;
+			width: 100%;
+
+			div {
+				background-color: rgba(white, .5);
+				@include general-width;
+				height: 80%;
+			}
+		}
+		.header-container {
+			min-width: 400px;
+			width: 80%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+
+			padding: 20px 0px 10px 0px;
+
+
+			.btn-sm {
+				height: 34px;
+			}
+			//code snipit for search bar
+			.search-bar {
+				width: 200px;
+			}
+			.stylish-input-group .input-group-addon{
+			    background: white !important; 
+			}
+			.stylish-input-group .form-control{
+				border-right:0; 
+				box-shadow:0 0 0; 
+				border-color:#ccc;
+			}
+			.stylish-input-group button{
+			    border:0;
+			    background:transparent;
+			    .glyphicon {
+			    	font-size: 13px;
+			    }
+			}
+
+		}
 	}
-	a:hover {
-		color: #def;
-	}
+	
 	#events {
 		display: flex;
 		flex-direction: column-reverse;
@@ -13,11 +72,16 @@
 
 		padding-top: 40px;
 		width: 100%;
-		background-color: #eee;
+		background-color: rgba(black, .05);
+
+		a {
+		color: black;
+		}
+		a:hover {
+			color: #286090;
+		}
 		.event {
-			min-width: 400px;
-			width: 80%;
-			max-width: 800px;
+			@include general-width;
 
 			overflow: hidden;	
 			background-color: white;
