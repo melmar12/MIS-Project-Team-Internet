@@ -20,6 +20,8 @@ Event.create(
 	name: "Day for night",
 	description: "DAY FOR NIGHT is an experiential arts festival featuring digital installations and world-renowned performers, taking place on December 17 and 18 in Houston, Texas. “Day for Night piqued our interest and delivered in spades,” hailed Consequence of Sound, and Department of Dance deemed the inaugural event “the festival of the future.”",
     street_line1: "401 Franklin St",
+    start_date: DateTime.parse("09/01/2009 17:00"),
+    end_date: DateTime.parse("09/01/2009 17:00"),
     city: "Houston",
     state: "TX",
     zip: "77201",
