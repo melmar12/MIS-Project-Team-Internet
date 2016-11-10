@@ -6,15 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(first_name: 'melissa', email: 'mel@example.com', password: '123', admin: true);
+User.create(first_name: 'melissa', last_name: "doe", classification: "student", email: 'mel@example.com', password: '123', admin: true);
 
-User.create(first_name: 'nick', email: 'nick@example.com', password: '123', admin: false);
-User.create(first_name: 'jack', email: 'jack@example.com', password: '123', admin: false);
-User.create(first_name: 'jil', email: 'jil@example.com', password: '123', admin: false);
-User.create(first_name: 'bill', email: 'bill@example.com', password: '123', admin: false);
-User.create(first_name: 'dave', email: 'dave@example.com', password: '123', admin: false);
-User.create(first_name: 'matt', email: 'matt@example.com', password: '123', admin: false);
-User.create(first_name: 'will', email: 'will@example.com', password: '123', admin: false);
+User.create(first_name: 'nick', last_name: "doe", classification: "student", email: 'nick@example.com', password: '123', admin: false);
+User.create(first_name: 'jack', last_name: "doe", classification: "student", email: 'jack@example.com', password: '123', admin: false);
+User.create(first_name: 'jil', last_name: "doe", classification: "student", email: 'jil@example.com', password: '123', admin: false);
+User.create(first_name: 'bill', last_name: "doe", classification: "student", email: 'bill@example.com', password: '123', admin: false);
+User.create(first_name: 'dave', last_name: "doe", classification: "student", email: 'dave@example.com', password: '123', admin: false);
+User.create(first_name: 'matt', last_name: "doe", classification: "student", email: 'matt@example.com', password: '123', admin: false);
+User.create(first_name: 'will', last_name: "doe", classification: "student", email: 'will@example.com', password: '123', admin: false);
 
 Event.create(
 	name: "Day for night",
