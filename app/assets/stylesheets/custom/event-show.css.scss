@@ -7,11 +7,12 @@
 
 	#event-show-container {
 		width: 85%;
+		p {color: #a9a9}	
 		.header {
 			width: 100%;
 
 			.header-image {
-				height: 200px;
+				height: 400px;
 				width: 100%;
 				background-color: #eee;
 				background-image: url('http://www.uh.edu/news-events/stories/2016/August/Cullen.jpg');
@@ -27,7 +28,7 @@
 
 			.right-col {
 				width: 50%;
-				padding-right: 20px;
+				padding-right: 80px;
 			}
 			.left-col {
 				width: 50%;
