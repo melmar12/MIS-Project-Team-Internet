@@ -4,17 +4,17 @@
   <div id="event-show-container">
 
     <div class="header">
-      <h1><%= @event.name %></h1>
+      <h1><%= @event.name.titleize %></h1>
       <% if @event.cancelled? %>
         <p>Event Cancelled!!!!!!!!!</p>
       <% end %>
+      <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary btn-sm" %>
+      <%= link_to 'Delete', @event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
       </br>
-      <%= link_to 'Edit', edit_event_path(@event) %> |
-      <%= link_to 'Back', events_path %> |
-      <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <div class="header-image">
-        event image
-      </div>
+      </br>
+
+      <div class="header-image"></div>
+
     </div>
 
     <div class="event-info">
@@ -24,20 +24,25 @@
         <p> <%= @event.description %></p>
 
         <% if @event.user %>
-        <h3>Created By: <%= @event.user.first_name %></h3>
+        <p>Created By: <%= @event.user.first_name %></p>
        <% end %>
       </div>
 
       <div class="left-col">
-        <h3>Time/Date</h3>
-        <%= @event.start_date %>
-        <%= @event.end_date %>
+        <h3>Dates</h3>
+        <p><%= @event.start_date.strftime("%l:%M %p %A, %b %d %Y") %> - 
+        </br>
+        <%= @event.end_date.strftime("%l:%M %p %A, %b %d %Y") %></p>
 
         <h3>Address</h3>
+        <p>
         <%= @event.street_line1 %>
+        </br>
         <%= @event.city %>
         <%= @event.state %>
         <%= @event.zip %>
+        </p>
+        </br>
 
         <%= image_tag 'https://maps.googleapis.com/maps/api/staticmap?center=' + @event.latitude.to_s + ',' + @event.longitude.to_s + '&zoom=12&size=600x300' %>
       </div>
