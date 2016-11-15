@@ -6,30 +6,32 @@
 	margin-top: -10px;
 
 	#event-show-container {
-		width: 80%;
+		width: 85%;
 		.header {
-			height: 200px;
 			width: 100%;
 
 			.header-image {
 				height: 200px;
 				width: 100%;
 				background-color: #eee;
+				background-image: url('http://www.uh.edu/news-events/stories/2016/August/Cullen.jpg');
+				background-size: cover;
+				background-position: center;
 			}
 		}
 
 		.event-info {
 			display: flex;
 			flex-direction: row;
+			padding: 25px 0px 75px 0px;
 
-			background-color: green;
 			.right-col {
 				width: 50%;
-				background-color: red;
+				padding-right: 20px;
 			}
 			.left-col {
 				width: 50%;
-				background-color: yellow;
+				text-align: center;
 			}
 		}
 	}
