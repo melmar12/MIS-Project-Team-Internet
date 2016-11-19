@@ -21,7 +21,6 @@ class Event < ActiveRecord::Base
   validates :state, 
     presence: true,
     length: {minimum: 2, maximum: 30}
-    # add set options??
   validates :user_id, 
     presence: true
 

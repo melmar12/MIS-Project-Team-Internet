@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<div class="form-horizontal">
+<div class="form-horizontal event-forms">
 <fieldset>
 
   <div class="form-group">
@@ -24,57 +24,58 @@
   <div class="form-group">
     <%= f.label :description, class: "col-md-4 control-label" %>
     <div class="col-md-4">
-    <%= f.text_area :description, class: "form-control", id: "textarea" %>
+    <%= f.text_area :description, placeholder: 'About the event', class: "form-control", id: "textarea" %>
     </div>
   </div>
 
-<!--   Not fromatting like I want.... --> 
   <div class="from-group row">
     <%= f.label 'Start', class: "col-md-4 control-label" %>
     <div class="col-md-4">
-    <%= f.text_field :start_date, class: "form-control", :id => 'example-datetime-local-input' %>
+    <%= f.datetime_local_field :start_date, class: "form-control", :id => 'example-datetime-local-input' %>
   </div>
   </div>
+  </br>
 
    <div class="from-group row">
     <%= f.label 'End', class: "col-md-4 control-label" %>
     <div class="col-md-4">
-    <%= f.datetime_select :end_date, class: "form-control", id: "example-datetime-local-input" %>
+    <%= f.datetime_local_field :end_date, class: "form-control", id: "example-datetime-local-input" %>
   </div>
   </div>
+  </br>
 
   <div class="form-group">
     <%= f.label 'Street', class: "col-md-4 control-label" %>
     <div class="col-md-4">
-    <%= f.text_field :street_line1, class: "form-control input-md", id: "Street" %>
+    <%= f.text_field :street_line1, placeholder: '(optional)', class: "form-control input-md", id: "Street" %>
   </div>
   </div>
 
   <div class="form-group">
     <%= f.label :city, class: "col-md-4 control-label" %>
-    <div class="col-md-4">
+    <div class="col-md-2">
     <%= f.text_field :city, class: "form-control input-md", id: "City" %>
   </div>
   </div>
 
   <div class="form-group">
     <%= f.label :state, class: "col-md-4 control-label" %>
-    <div class="col-md-4">
+    <div class="col-md-1">
     <%= f.text_field :state, class: "form-control input-md", id: "State" %>
   </div>
   </div>
 
   <div class="form-group">
     <%= f.label :zip, class: "col-md-4 control-label" %>
-    <div class="col-md-4">
-    <%= f.text_field :zip, class: "form-control input-md", id: "Zip" %>
+    <div class="col-md-1">
+    <%= f.text_field :zip, placeholder: '(optional)', class: "form-control input-md", id: "Zip" %>
   </div>
   </div>
 
   <div class="form-group">
     <%= f.label :country, class: "col-md-4 control-label" %>
-    <div class="col-md-4">
-    <%= f.text_field :country, class: "form-control input-md", id: "Country" %>
+    <div class="col-md-1">
+    <%= f.text_field :country, placeholder: '(optional)', class: "form-control input-md", id: "Country" %>
   </div>
   </div>
 
@@ -100,23 +101,13 @@
     <%= f.submit 'Save', :class => 'btn btn-primary save-btn' %>
     <% end %>
     <%= link_to 'Cancel', events_path, class: "btn btn-default" %>
+    <% if params[:action] == 'edit' %>
+    <%= link_to 'Delete Event', @event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+
+    <% end %>
   </div>
   </div>
 
 </fieldset>
 </div>
 <% end %>
-
-<!-- Get Datetime to look like this -->
-<div class="form-horizontal">
-<fieldset>
-
-<div class="form-group row">
-  <label class="col-md-4 control-label" for="example-datetime-local-input">Date and time</label>
-  <div class="col-md-4">
-    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-  </div>
-</div>
-
-</fieldset>
-</div>
