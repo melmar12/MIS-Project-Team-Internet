@@ -1,5 +1,5 @@
 $coog-red: rgba(200,16,46,1.00);
-
+html, body {height:100%;}
 h1 {
 	text-align: center;
 }
@@ -19,6 +19,7 @@ a:hover {
 #yield-container {
 	background-color: white;
 	margin-bottom: 200px;
+
 }
 
 @mixin general-width {

@@ -14,10 +14,10 @@ class User < ActiveRecord::Base
   # format: {with: VALID_EMAIL_REGEX}
   # setup fancy email validation thing
 
-  #validates :password, presence: true, 
-   # length: {minimum: 3, maximum: 30}
+  validates :password, presence: true, 
+    length: {minimum: 3, maximum: 30}
 
-  #has_many :events, dependent: :destroy
+  has_many :events, dependent: :destroy
 
   private
    def set_defaults

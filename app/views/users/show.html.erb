@@ -1,39 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+<div class="profile-view">
+  <div class="top-column">
+    <div class="profile-image">
+    </div>
+    <h2><%= @user.first_name %> <%= @user.last_name %> <%= "(Admin)" if current_user.admin? %></h2> <ul>
+      <li><strong>Classification: </strong><%= @user.classification %></li>
+      <li><strong>Organization: </strong><%= @user.organization %></li>
+    </ul>
+  </div>
+    <div id="events">
+      <% if @user.events %>
+      <%= render 'events/events', obj: @user_events %>
+      <% else %>
+      <h2>no events to show</h2>
+      <% end %>
+    </div>
 
-<p>
-  <strong>Classification:</strong>
-  <%= @user.classification %>
-</p>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
-  <strong>Organization:</strong>
-  <%= @user.organization %>
-</p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
