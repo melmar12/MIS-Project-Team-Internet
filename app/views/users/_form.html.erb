@@ -11,39 +11,86 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :classification %><br>
-    <%= f.text_field :classification %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :organization %><br>
-    <%= f.text_field :organization %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
+  <div class="form-horizontal event-forms">
+  <fieldset>
+
+  <div class="form-group">
+    <%= f.label :first_name, class: "col-md-4 control-label" %> 
+    <div class="col-md-4">
+     <%= f.text_field :first_name, class: "form-control input-md" %>
+    </div>
   </div>
 
-  <% if logged_in? && current_user.admin? %>
-  <div class="field">
-    <%= f.label :admin %><br>
-    <%= f.check_box :admin %>
+  <div class="form-group">
+    <%= f.label :last_name, class: "col-md-4 control-label" %> 
+    <div class="col-md-4">
+     <%= f.text_field :last_name, class: "form-control input-md" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, class: "col-md-4 control-label" %> 
+    <div class="col-md-4">
+     <%= f.text_field :email, class: "form-control input-md" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :classification, class: "col-md-4 control-label" %> 
+    <div class="col-md-4">
+       <select id="classification" name="user[classification]" class="form-control">
+        <option value="Student">Student</option>
+        <option value="Alumni">Alumni</option>
+        <option value="Faculty">Faculty</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :organization, class: "col-md-4 control-label" %> 
+    <div class="col-md-4">
+     <%= f.text_field :organization, placeholder: 'name of organization (optional)', class: "form-control input-md" %>
+    </div>
+  </div>
+
+ <% if logged_in? && current_user.admin? %>
+ <div class="form-group">
+    <%= f.label :admin, class: "col-md-4 control-label" %> 
+    <div class="col-md-4">
+     <%= f.check_box :admin %>
+    </div>
   </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <% if params[:action] == 'edit' %>
+    <%= f.label 'Change Password', class: "col-md-4 control-label" %>
+    <% else %>
+    <%= f.label :password, class: "col-md-4 control-label" %> 
+    <% end %>
+    <div class="col-md-4">
+     <%= f.password_field :password, placeholder: 'enter new password', id: 'example-password-input', class: "form-control input-md" %>
+    </div>
   </div>
-<% end %>
+
+
+  <div class="actions form-group">
+    <label class="col-md-4 control-label" for="Create"></label>
+    <div class="col-md-8">
+    <% if params[:action] == 'new' %>
+    <%= f.submit 'Create Account', :class => 'btn btn-primary' %>
+    <% elsif params[:action] == 'edit' %>
+    <%= f.submit 'Save', :class => 'btn btn-primary save-btn' %>
+    <% end %>
+    <%= link_to 'Cancel', events_path, class: "btn btn-default" %>
+    <% if params[:action] == 'edit' %>
+    <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    <% end %>
+  </div>
+  </div>
+
+
+  </fieldset>
+  </div>
+  <% end %>
