@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
         session[:user_id] = @user.id
         flash[:success] = "Signup successfully. Welcome #{@user.first_name}!"
-        redirect_to root_path
+        redirect_to user_path(@user)
       else
         render :new
         #format.json { render json: @user.errors, status: :unprocessable_entity }
