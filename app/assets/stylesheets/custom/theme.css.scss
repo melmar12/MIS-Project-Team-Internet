@@ -16,6 +16,10 @@ a:hover {
 	text-decoration: none;
 }
 
+#yield-container {
+	background-color: white;
+	margin-bottom: 200px;
+}
 
 @mixin general-width {
 	min-width: 400px;
