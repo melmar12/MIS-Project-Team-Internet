@@ -5,10 +5,11 @@
   <div class="top-column">
     <div class="profile-image">
     </div>
-    <h2><%= @user.first_name %> <%= @user.last_name %> <%= "(Admin)" if @user.admin? %></h2> <ul>
-      <li><strong>Classification: </strong><%= @user.classification %></li>
-      <li><strong>Organization: </strong><%= @user.organization %></li>
-    </ul>
+    <h2><%= @user.first_name %> <%= @user.last_name %> <%= "(Admin)" if @user.admin? %></h2> 
+      <p><strong>Classification: </strong><%= @user.classification %></p>
+      <% if @user.organization %>
+      <p><strong>Organization: </strong><%= @user.organization %></p>
+      <% end %>
   </div>
 
       <% if @user.events %>
