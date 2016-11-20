@@ -12,10 +12,12 @@
       <% end %>
   </div>
 
-      <% if @user.events %>
+      <% if @user.events.count > 1 %>
       <%= render 'events/events', obj: @user_events %>
       <% else %>
-      <h2>no events to show</h2>
+      <div id="no-events">
+        <h2>no events to show</h2>
+      </div>
       <% end %>
 
 </div>

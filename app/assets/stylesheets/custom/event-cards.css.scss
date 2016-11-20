@@ -1,4 +1,4 @@
-#events {
+#events, #no-events{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -47,6 +47,17 @@
   		background: $coog-red;
   		border: 1px solid $coog-red;
   		color: #fff;
+	}
+}
+#no-events {
+	height: 450px;
+	justify-content: center;
+	h2 {
+		font-size: 33px;
+		color: rgba(black, .06);
+	}
+	h2:hover {
+		color: rgba(black, .06); 
 	}
 }
 
