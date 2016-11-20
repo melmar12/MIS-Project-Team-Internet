@@ -1,9 +1,7 @@
 #events {
 		display: flex;
-		flex-direction: column-reverse;
+		flex-direction: column;
 		align-items: center;
-
-		padding-top: 40px;
 		width: 100%;
 		background-color: rgba(black, .05);
 
@@ -13,13 +11,13 @@
 		a:hover {
 			color: #286090;
 		}
-			.event {
+		.event {
 				@include general-width;
 
 				overflow: hidden;	
 				background-color: white;
 				padding: 11px 40px 40px 40px;
-				margin-bottom: 40px;
+				margin-top: 40px;
 				border-radius: 10px;
 				
 				span {
@@ -40,5 +38,16 @@
 				a {
 					color: white;
 				}
-			}
-		}
+	}
+	.pagination a:hover, h2:hover  {
+		color: $coog-red;
+	}
+	.pagination li.active span {
+  		background: $coog-red;
+  		border: 1px solid $coog-red;
+  		color: #fff;
+	}
+}
+
+
+
