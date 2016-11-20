@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:index]
   before_action :require_same_user, only: [:edit, :update, :destroy]
-  before_action :require_admin, only: [:destroy, :index]
   before_action :require_user, only: [:index]
 
   # GET /users
@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user_events = @user.events 
   end
 
   # GET /users/new
@@ -64,10 +65,19 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.admin 
+       @user.destroy
+      respond_to do |format|
+        format.html { redirect_to users_path, notice: 'User was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else 
+      @user.destroy
+      session[:user_id] = nil
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'User was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 

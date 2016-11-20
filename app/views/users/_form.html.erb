@@ -80,10 +80,11 @@
     <div class="col-md-8">
     <% if params[:action] == 'new' %>
     <%= f.submit 'Create Account', :class => 'btn btn-primary' %>
+    <%= link_to 'Cancel', events_path, class: "btn btn-default" %>
     <% elsif params[:action] == 'edit' %>
     <%= f.submit 'Save', :class => 'btn btn-primary save-btn' %>
+    <%= link_to 'Cancel', user_path(current_user), class: "btn btn-default" %>
     <% end %>
-    <%= link_to 'Cancel', events_path, class: "btn btn-default" %>
     <% if params[:action] == 'edit' %>
     <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
     <% end %>

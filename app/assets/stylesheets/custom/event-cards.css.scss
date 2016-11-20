@@ -1,0 +1,44 @@
+#events {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+
+		padding-top: 40px;
+		width: 100%;
+		background-color: rgba(black, .05);
+
+		a {
+		color: black;
+		}
+		a:hover {
+			color: #286090;
+		}
+			.event {
+				@include general-width;
+
+				overflow: hidden;	
+				background-color: white;
+				padding: 11px 40px 40px 40px;
+				margin-bottom: 40px;
+				border-radius: 10px;
+				
+				span {
+					float: right;
+					color: #ddd;
+	    			font-size: 40px;
+	    			margin-right: -13px;
+	    			margin-top: -11px;
+				}
+
+				span:hover {
+					color: yellow;
+				}	
+
+			}
+
+			.action-buttons {
+				a {
+					color: white;
+				}
+			}
+		}
