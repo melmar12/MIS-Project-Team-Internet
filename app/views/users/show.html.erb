@@ -10,13 +10,12 @@
       <li><strong>Organization: </strong><%= @user.organization %></li>
     </ul>
   </div>
-    <div id="events">
+
       <% if @user.events %>
       <%= render 'events/events', obj: @user_events %>
       <% else %>
       <h2>no events to show</h2>
       <% end %>
-    </div>
 
 </div>
 
