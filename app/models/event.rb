@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
 
   geocoded_by :address
   def address
-    [street_line1, city, state, zip, country].compact.join(', ')
+    [address_line1, address_line2, city, state, zip, country].compact.join(', ')
   end
 
   validates :name, 
@@ -32,6 +32,6 @@ class Event < ActiveRecord::Base
   after_validation :geocode, :if => :address_changed?  
 
   def address_changed?
-  	street_line1_changed? || city_changed? || state_changed? || zip_changed? || country_changed?
+  	address_line1_changed? || address_line2_changed? || city_changed? || state_changed? || zip_changed? || country_changed?
   end
 end

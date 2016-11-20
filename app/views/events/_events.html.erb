@@ -5,7 +5,7 @@
       <a href="<%= event_path(event) %>"><h2><%= event.name.titleize %></h2></a> 
       <p><%= event.start_date.strftime("%l:%M %p %A, %b %d %Y") %></p>
       <a href="<%= event_path(event) %>"><%= image_tag "http://placekitten.com/700/200" %></a>
-      <p><%= event.street_line1 %>,  <%= event.city %></p>
+      <p><%= event.address_line1 %>,  <%= event.city %></p>
       <p><%= truncate(event.description, :length => 200, :separator => '', omission: '...(continued)') %></p>
 
 

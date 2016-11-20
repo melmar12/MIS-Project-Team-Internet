@@ -20,7 +20,10 @@
     <div class="event-info">
 
       <div class="right-col">
-        <h3>Description</h3>
+         <h2>Details</h2>
+        <% if @event.website %>
+        <strong>Website: </strong><a href="<%= @event.website %>"><%= @event.website %></a></br></br>
+        <% end %>
         <p> <%= @event.description %></p>
 
         <% if @event.user %>
@@ -29,15 +32,25 @@
       </div>
 
       <div class="left-col">
-        <h3>Dates</h3>
+        <strong>Dates</strong>
         <p><%= @event.start_date.strftime("%l:%M %p %A, %b %d %Y") %> - 
         </br>
         <%= @event.end_date.strftime("%l:%M %p %A, %b %d %Y") %></p>
 
-        <h3>Address</h3>
+        <strong>Address</strong>
         <p>
-        <%= @event.street_line1 %>
+        <% if @event.company_name %>  
+        <%= @event.company_name %>
         </br>
+        <% end %>
+        <% if @event.address_line1 %>  
+        <%= @event.address_line1 %>
+        </br>
+        <% end %>
+        <% if @event.address_line2 %>  
+        <%= @event.address_line2 %>
+        </br>
+        <% end %>
         <%= @event.city %>
         <%= @event.state %>
         <%= @event.zip %>

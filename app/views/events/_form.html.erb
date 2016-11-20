@@ -22,6 +22,14 @@
   </div>
 
   <div class="form-group">
+    <%= f.label 'Website', class: "col-md-4 control-label" %>
+    <div class="col-md-4">
+    <%= f.text_field :Website, placeholder: 'https:// (optional)', class: "form-control input-md" %>
+  </div>
+  </div>
+
+
+  <div class="form-group">
     <%= f.label :description, class: "col-md-4 control-label" %>
     <div class="col-md-4">
     <%= f.text_area :description, placeholder: 'About the event', class: "form-control", id: "textarea" %>
@@ -45,37 +53,51 @@
   </br>
 
   <div class="form-group">
-    <%= f.label 'Street', class: "col-md-4 control-label" %>
+    <%= f.label 'Company Name', class: "col-md-4 control-label" %>
     <div class="col-md-4">
-    <%= f.text_field :street_line1, placeholder: '(optional)', class: "form-control input-md", id: "Street" %>
+    <%= f.text_field :company_name, placeholder: '(optional)', class: "form-control input-md" %>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Address', class: "col-md-4 control-label" %>
+    <div class="col-md-4">
+    <%= f.text_field :address_line1, placeholder: '(optional)', class: "form-control input-md" %>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Address Line 2', class: "col-md-4 control-label" %>
+    <div class="col-md-4">
+    <%= f.text_field :address_line2, placeholder: '(optional)', class: "form-control input-md" %>
   </div>
   </div>
 
   <div class="form-group">
     <%= f.label :city, class: "col-md-4 control-label" %>
     <div class="col-md-2">
-    <%= f.text_field :city, class: "form-control input-md", id: "City" %>
+    <%= f.text_field :city, class: "form-control input-md"%>
   </div>
   </div>
 
   <div class="form-group">
     <%= f.label :state, class: "col-md-4 control-label" %>
     <div class="col-md-1">
-    <%= f.text_field :state, class: "form-control input-md", id: "State" %>
+    <%= f.text_field :state, class: "form-control input-md"%>
   </div>
   </div>
 
   <div class="form-group">
     <%= f.label :zip, class: "col-md-4 control-label" %>
     <div class="col-md-1">
-    <%= f.text_field :zip, placeholder: '(optional)', class: "form-control input-md", id: "Zip" %>
+    <%= f.text_field :zip, placeholder: '(optional)', class: "form-control input-md"%>
   </div>
   </div>
 
   <div class="form-group">
     <%= f.label :country, class: "col-md-4 control-label" %>
     <div class="col-md-1">
-    <%= f.text_field :country, placeholder: '(optional)', class: "form-control input-md", id: "Country" %>
+    <%= f.text_field :country, placeholder: '(optional)', class: "form-control input-md"%>
   </div>
   </div>
 
