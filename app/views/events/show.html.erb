@@ -24,7 +24,7 @@
         <p> <%= @event.description %></p>
 
         <% if @event.user %>
-        <p>Created By: <%= @event.user.first_name %></p>
+        <p>Created By: <%= link_to @event.user.first_name, user_path(@event.user) %></p>
        <% end %>
       </div>
 
