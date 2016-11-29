@@ -22,7 +22,7 @@ private
 
     @order = "lower(email) = " +
       ActiveRecord::Base.connection.quote(search_term) +
-      " desc, name asc"
+      " desc, start_date asc"
   end
 
   def extract_name(email)
@@ -31,12 +31,12 @@ private
 
   def build_for_title_search(search_term)
     @where_clause << case_insensitive_search(:name)
-    @where_args[:name]  = starts_with(search_term)
+    @where_args[:name]  = contains(search_term)
 
     @where_clause << " OR #{case_insensitive_search(:description)}"
-    @where_args[:description] = starts_with(search_term)
+    @where_args[:description] = contains(search_term)
 
-    @order = "name asc"
+    @order = "start_date asc"
   end
 
   def build_for_content_search(search_term)
