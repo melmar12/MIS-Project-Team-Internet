@@ -37,5 +37,5 @@ test:
 production:
   <<: *default
   database: team-internet_production
-  username: oars
+  username: teaminternet
   password: <%= ENV['OARS_DATABASE_PASSWORD'] %>

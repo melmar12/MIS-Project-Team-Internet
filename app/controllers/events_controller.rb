@@ -6,7 +6,17 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.paginate(:page => params[:page], :per_page => 5)
+    if params[:keywords].present?
+      @keywords = params[:keywords]
+      event_search_term = SearchTerm.new(@keywords)
+      @events = Event.where(
+          event_search_term.where_clause,
+          event_search_term.where_args).
+        order(event_search_term.order)
+      @events = @events.paginate(:page => 1, :per_page =>  5)
+    else
+      @events = Event.paginate(:page => params[:page], :per_page => 5)
+    end
   end
 
   # GET /events/1

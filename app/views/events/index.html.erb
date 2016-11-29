@@ -4,22 +4,26 @@
   <div class="header">
     <div class="header-image">
       <div>
-        <h1>Text text text</h1>
+        <h1>Team Internet</h1>
         <button type="button" class="btn btn-danger btn-lg">
-         CTA
+         Sign Up To Add Events
         </button>
       </div>
     </div>
     <div class="header-container">
+      <%= form_for :events, method: :get do |f| %>
 
       <div class="input-group stylish-input-group search-bar">
-        <input type="text" class="form-control"  placeholder="Search" >
+        <%= label_tag :keywords, nil, class: "sr-only" %>
+        <%= text_field_tag :keywords, nil, placeholder: "Search for events.", class: "form-control" %>
           <span class="input-group-addon">
-              <button type="submit">
+              <button type="submit" name="commit">
                 <span class="glyphicon glyphicon-search"></span>
-              </button>  
+              </button>
           </span>
       </div>
+      <% end %>
+
 
       <div class="btn-group">
         <button type="button" class="btn btn-sm btn-default">Sort By</button>
@@ -53,11 +57,8 @@
         <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Calendar View
       </button>
 
-     </div>   
+     </div>
   </div>
-  
+
 
 <%= render 'events', obj: @events %>
-
-
-
