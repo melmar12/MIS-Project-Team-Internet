@@ -6,6 +6,11 @@ start app:
 or
 'rake db:drop db:migrate db:seed'
 
+ deploy:
+ 'rake assets:precompile'
+ commit changed and push to heroku
+ 'heroku run rake db:migrate db:seed'
+
 
 
 
