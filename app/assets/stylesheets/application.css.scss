@@ -11,7 +11,9 @@
  * file per style scope.
  *
  *= require_self
+ *= require fullcalendar
  */
+
 
 @import "custom/theme.css.scss";
 @import "custom/nav-bar.css.scss";
@@ -31,3 +33,8 @@
 
 
 
+<<<<<<< HEAD
+=======
+@import "custom/footer.css.scss";
+
+>>>>>>> 52886fa7ff452e9662d9cc2321aebebf1c6a90c5
