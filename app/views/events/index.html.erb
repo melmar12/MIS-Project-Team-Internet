@@ -54,17 +54,12 @@
       </div>
 
       <button type="button" class="btn btn-default btn-sm">
-<<<<<<< HEAD
-        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <a style="color: black" href="https://uh-events-raymonduong108.c9users.io/calendar/index">Calendar View</a>
+
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <%= link_to 'Calendar View', calendar_path(), method: :get, :style => 'color: black' %>
       </button>
 
      </div>
-=======
-        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Calendar View
-        
-      </button>
-
-     </div>   
+     </div>
   </div>
 
 
@@ -73,10 +68,10 @@
     <% @events.each do |event| %>
     <div class="event">
       <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
-      <a href="<%= event_path(event) %>"><h2><%= event.name.titleize %></h2></a> 
+      <a href="<%= event_path(event) %>"><h2><%= event.name.titleize %></h2></a>
       <p><%= event.start_date.strftime("%l:%M %p %A, %b %d %Y") %></p>
       <a href="<%= event_path(event) %>"><%= image_tag "http://placekitten.com/700/200" %></a>
-      <p><%= event.street_line1 %>,  <%= event.city %></p>
+      <p><%= event.address_line1 %>,  <%= event.city %></p>
       <p><%= truncate(event.description, :length => 200, :separator => '', omission: '...(continued)') %></p>
 
 
