@@ -1,3 +1,14 @@
+start app:
+
+'bundle install'
+
+'rake db:migrate db:seed'
+or
+'rake db:drop db:migrate db:seed'
+
+
+
+
 original scaffolds:
 
 rails g scaffold Event name:string description:string start_date:datetime end_date:datetime street_line1:string city:string state:string zip:string country:string latitude:float longitude:float cancelled:boolean user:belongs_to

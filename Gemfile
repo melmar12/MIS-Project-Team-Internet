@@ -21,6 +21,9 @@ gem 'geocoder'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -52,5 +55,7 @@ group :development do
   gem 'spring'
 end
 
-gem 'fullcalendar-rails'
-gem 'momentjs-rails'
+group :production do
+	gem 'rails_12factor'
+	gem 'pg'
+end
