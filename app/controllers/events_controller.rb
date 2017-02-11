@@ -13,9 +13,20 @@ class EventsController < ApplicationController
           event_search_term.where_clause,
           event_search_term.where_args).
         order(event_search_term.order)
-      @events = @events.paginate(:page => 1, :per_page =>  5)
+    end
+
+    if params[:keywords].present?
+      @events = @events.paginate(:page => 1, :per_page =>  5).reverse_order
     else
-      @events = Event.paginate(:page => params[:page], :per_page => 5)
+      @events = Event.paginate(:page => params[:page], :per_page => 5).reverse_order
+    end
+
+    if params[:sort_by].present?
+      logger.debug "parameters present: :sort_by => #{params[:sort_by]}"
+      if params[:sort_by].downcase == "desc"
+        @events = @events.order(:start_date).reverse_order
+        logger.debug ("Reordered")
+      end
     end
   end
 
